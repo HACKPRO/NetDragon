@@ -1,0 +1,547 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(中华人民共和国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#include ""res\\NetDragon.rc2""  // 非 Microsoft Visual C++ 编辑的资源\r\n"
+    "#include ""afxres.rc""     // 标准组件\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\HackProLabs.ico"
+IDI_HOST                ICON                    "res\\Host.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_NetDragon_DIALOG DIALOGEX 0, 0, 365, 211
+STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_CLIENTEDGE | WS_EX_STATICEDGE | WS_EX_APPWINDOW
+CAPTION "Net Dragon v1.0 beta"
+MENU IDD_MENU
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "应用",IDC_APPLY,307,193,52,16
+    PUSHBUTTON      "退出",IDC_ANNUL,247,193,52,16
+    PUSHBUTTON      "最小化",IDOK,187,193,52,16
+    PUSHBUTTON      "升级",IDC_UPDATE,111,193,41,15,NOT WS_VISIBLE
+END
+
+IDD_NOTICEDLG DIALOGEX 0, 0, 217, 241
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Net Dragon v1.0 beta"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,7,206,203,21
+    COMBOBOX        IDC_ADAPTER,11,156,196,75,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "使用注意事项",IDC_STATIC,7,7,203,134
+    EDITTEXT        IDC_EDITNOTICE,11,19,198,117,ES_MULTILINE
+    GROUPBOX        "请先选择网卡",IDC_STATIC,7,145,203,28
+    CONTROL         "以静态绑定ARP启动",IDC_RADIOSTATIC,"Button",BS_AUTORADIOBUTTON | BS_FLAT | WS_TABSTOP,7,176,83,12
+    EDITTEXT        IDC_EDITMAC,133,190,74,12,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    LTEXT           "网关MAC,格式:aa-bb-cc-dd-ee-ff",IDC_STATICF,17,191,112,11,NOT WS_VISIBLE
+    PUSHBUTTON      "取消静态启动",IDC_BUTTONCANCELSTATIC,133,176,74,11,NOT WS_VISIBLE
+END
+
+IDD_ATTACKDLG DIALOGEX 0, 0, 361, 114
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "HackPro攻击器(请慎重使用)"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "断开网络",IDC_OUTLINE,28,54,120,16,BS_FLAT
+    EDITTEXT        IDC_EDITAKIP,87,16,64,12,ES_AUTOHSCROLL
+    LTEXT           "请设置目标IP:",IDC_STATIC,27,18,59,10
+    PUSHBUTTON      "IP冲突",IDC_CONFLICT,28,75,120,16,BS_FLAT
+    DEFPUSHBUTTON   "窃取数据",IDC_ARPCHEAT,28,33,120,16,BS_FLAT
+    LTEXT           "",IDC_STATICSTATE,103,100,126,11
+    PUSHBUTTON      "打开记录文件",IDC_OPENDATA,189,77,140,16
+    GROUPBOX        "攻击设置",IDC_STATIC,19,8,138,87
+    GROUPBOX        "获取的信息",IDC_STATIC,188,7,148,88
+    EDITTEXT        IDC_EDITINFO,191,21,138,28,ES_MULTILINE
+    PUSHBUTTON      "显示目标IP流向",IDC_SHOWDATA,190,55,140,16
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDFRAME,172,8,1,92
+END
+
+IDD_SCANDLG DIALOGEX 0, 0, 298, 236
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "局域网主机扫描器"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "开始扫描",IDC_SCAN,7,200,284,22
+    GROUPBOX        "在线主机列表",IDC_STATIC,7,7,284,193
+    CONTROL         "",IDC_HOSTLIST,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,11,17,276,155
+    CONTROL         "",IDC_PROGRESS,"msctls_progress32",WS_BORDER,7,177,284,16
+END
+
+IDD_DIALOGRECORD DIALOGEX 0, 0, 532, 261
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "可疑计算机信息"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "停止",IDC_BUTTONCLEAN,94,239,68,14
+    PUSHBUTTON      "隐藏窗口",IDOK,7,239,68,14
+    EDITTEXT        IDC_EDITREC,7,7,518,226,ES_MULTILINE | ES_AUTOHSCROLL | WS_VSCROLL
+END
+
+IDD_SHOWDATA DIALOGEX 0, 0, 446, 265
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "监听数据显示器"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "隐藏窗口",IDOK,7,241,67,17
+    PUSHBUTTON      "清空记录",IDCANCEL,105,241,67,17
+    EDITTEXT        IDC_EDITDATA,7,7,432,234,ES_MULTILINE | ES_AUTOHSCROLL | WS_VSCROLL
+END
+
+IDD_DIALOGABOUT DIALOGEX 0, 0, 236, 56
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Net Dragon"
+FONT 12, "Microsoft Sans Serif", 700, 0, 0x0
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,13,15,13,13
+    LTEXT           "Net Dragon v1.0 beta , Powered by HackProLabs",IDC_STATIC,51,13,159,8
+    LTEXT           "CopyRight (C) 2011 HackPro Labs All Rights Reserved",IDC_STATIC,39,35,190,10
+END
+
+IDD_WARNINGDLG DIALOGEX 0, 0, 268, 121
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ARP欺骗检测器"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "检测到一个ARP欺骗! MAC地址为:",IDC_STATIC,13,13,117,15
+    PUSHBUTTON      "追踪目标IP",IDC_BUTTONTRACE,71,38,116,20
+    CONTROL         "",IDC_PROGRESSTRACE,"msctls_progress32",WS_BORDER,7,66,254,19
+    LTEXT           "",IDC_STATICRESULT,7,92,247,15
+    LTEXT           "",IDC_STATICMAC,143,13,107,15
+END
+
+IDD_HISTORYDLG DIALOGEX 0, 0, 387, 178
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "本次历史记录信息"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LISTBOX         IDC_LIST2,7,6,373,165,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_LOCALINFODLG DIALOGEX 0, 0, 262, 183
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "本机信息"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "本机网络设置参数",IDC_STATIC,11,7,240,62
+    LTEXT           "本机IP:",IDC_STATIC,18,18,37,15
+    LTEXT           "网关IP:",IDC_STATIC,18,35,37,15
+    LTEXT           "子网掩码:",IDC_STATIC,18,52,37,15
+    LTEXT           "本机MAC:",IDC_STATIC,132,18,42,15
+    LTEXT           "绑定的MAC:",IDC_STATIC,132,52,42,15
+    LTEXT           "网关MAC:",IDC_STATIC,132,35,42,15
+    LTEXT           "localip",IDC_STATIC_LOCALIP,57,18,59,12
+    LTEXT           "gatewayip",IDC_STATIC_GATEWAYIP,57,35,59,12
+    LTEXT           "netmask",IDC_STATIC_NETMASK,57,52,59,15
+    LTEXT           "relatemac",IDC_STATIC_RELATEMAC,178,52,59,12
+    LTEXT           "gatewaymac",IDC_STATIC_GATEWAYMAC,178,35,59,12
+    LTEXT           "localmac",IDC_STATIC_LOCALMAC,178,18,59,12
+    LTEXT           "系统当前ARP缓存条目",IDC_STATIC,77,72,85,10
+    CONTROL         "",IDC_ARPLIST,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,15,83,232,84
+END
+
+IDD_ARPPROPPAGE DIALOGEX 0, 0, 362, 161
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "ARP监视器"
+FONT 9, "宋体", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "状态显示",IDC_STATIC,7,5,353,69
+    LISTBOX         IDC_LIST1,12,19,345,43,NOT LBS_NOTIFY | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "数据统计",IDC_STATIC,7,79,353,69
+    LTEXT           "ARP 答复：",IDC_STATIC,16,90,78,10
+    LTEXT           "ARP 请求：",IDC_STATIC,16,104,78,10
+    LTEXT           "ARP 扫描：",IDC_STATIC,16,118,41,10
+    LTEXT           "ARP 欺骗：",IDC_STATIC,16,132,78,10
+    PUSHBUTTON      "显示可疑信息",IDC_SEE,253,92,102,20
+    PUSHBUTTON      "保护网关",IDC_PROTECT,253,120,102,20
+    LTEXT           "1",IDC_REPLY,117,91,21,9
+    LTEXT           "2",IDC_REQUEST,117,104,21,9
+    LTEXT           "3",IDC_SCAN,117,118,21,9
+    LTEXT           "4",IDC_CHEAT,117,131,21,9
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDFRAME,183,84,1,63
+END
+
+IDD_MONITOR DIALOGEX 0, 0, 353, 163
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "网络访问监视"
+FONT 9, "宋体", 0, 0, 0x0
+BEGIN
+    LTEXT           "状态列表：",IDC_STATIC,5,13,42,11
+    CONTROL         "",IDC_TREEMONITOR,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | WS_TABSTOP,0,27,348,129
+END
+
+IDD_RULE_CONTROL DIALOGEX 0, 0, 359, 161
+STYLE DS_SETFONT | WS_CHILD | WS_CAPTION
+CAPTION "网络防火墙"
+FONT 9, "宋体", 0, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_RULES,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,0,26,359,135,WS_EX_CLIENTEDGE
+    LTEXT           "应用程序权限规则：",IDC_STATIC,3,11,78,12
+    PUSHBUTTON      "添加",IDC_ADD,179,7,48,15
+    PUSHBUTTON      "编辑",IDC_EDIT,241,7,48,15
+    PUSHBUTTON      "删除",IDC_DELE,303,7,48,15
+END
+
+IDD_RULE DIALOGEX 0, 0, 256, 193
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "防火墙过滤器"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,139,170,50,14
+    PUSHBUTTON      "取消",IDCANCEL,195,170,50,14
+    LTEXT           "基本设置",IDC_RULE_TITLE,12,14,234,14
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDFRAME,7,27,242,2
+    LTEXT           "应用程序：",IDC_STATIC,14,34,43,11
+    LTEXT           "进出方向：",IDC_STATIC,14,49,43,11
+    LTEXT           "实施动作：",IDC_STATIC,14,65,43,11
+    COMBOBOX        IDC__APPLICATION,59,32,150,66,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_DIRECTION,59,47,150,59,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_ACTION,59,63,150,72,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      ". . .",IDC_BROWSER,215,33,26,12
+    LTEXT           "服务类型：",IDC_STATIC,11,109,43,11
+    LTEXT           "服务端口：",IDC_STATIC,11,125,43,11
+    LTEXT           "备注：",IDC_STATIC,11,139,43,11
+    COMBOBOX        IDC_TYPE,59,108,150,54,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_PORT,59,123,150,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MEMO,59,138,150,12,ES_AUTOHSCROLL
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDFRAME,7,161,242,1
+    LTEXT           "高级设置",IDC_STATIC,14,88,54,13
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDFRAME,7,101,242,2
+END
+
+IDD_SYSSET DIALOGEX 0, 0, 271, 138
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "系统设置"
+FONT 9, "宋体", 0, 0, 0x0
+BEGIN
+    LTEXT           "公共设置：",IDC_STATIC,7,6,43,9
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDFRAME,11,17,246,1
+    PUSHBUTTON      "安装过滤",IDC_INSTALL,17,23,46,15
+    PUSHBUTTON      "卸载过滤",IDC_REMOVE,75,23,46,15
+    CONTROL         "设置开机自启动",IDC_AUTOSTART,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,22,45,84,11
+    LTEXT           "过滤工作模式设置：",IDC_STATIC,7,91,92,9
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDFRAME,11,84,246,1
+    CONTROL         "放行所有",IDC_PASS_ALL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,22,107,46,11
+    CONTROL         "询问",IDC_QUERY_ALL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,83,107,38,11
+    CONTROL         "拒绝所有",IDC_DENY_ALL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,140,107,46,11
+    PUSHBUTTON      "设置服务器",IDC_SETSERVER,132,23,53,15
+    CONTROL         "启动服务器",IDC_ISSERVERSET,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,127,45,84,11
+    LTEXT           "注意！如果安装了过滤，请务必在删除程序前记得卸载。",IDC_NOTICE,30,64,218,15
+END
+
+IDD_SERVERIP DIALOGEX 0, 0, 186, 80
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "服务器IP配置"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,68,57,50,14
+    PUSHBUTTON      "取消",IDCANCEL,127,57,50,14
+    LTEXT           "请填写服务器的IP:",IDC_STATIC,9,9,70,12
+    EDITTEXT        IDC_SERVERIP,50,31,85,13,ES_AUTOHSCROLL
+END
+
+IDD_INTRUSION DIALOGEX 0, 0, 353, 142
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "入侵监视器"
+FONT 9, "宋体", 0, 0, 0x0
+BEGIN
+    PUSHBUTTON      "开始",IDC_STARTDETECT,18,11,41,15
+    CONTROL         "",IDC_LIST_INTRUSION,"SysListView32",LVS_REPORT | WS_BORDER | WS_TABSTOP,0,35,353,106
+    PUSHBUTTON      "停止",IDC_STOP,126,11,41,15
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080403a8"
+        BEGIN
+            VALUE "Comments", "Network Hack Software"
+            VALUE "CompanyName", "HackProLabs"
+            VALUE "FileDescription", "Net Dragon v1.0 beta"
+            VALUE "FileVersion", "1.0"
+            VALUE "InternalName", "Net Dragon.exe"
+            VALUE "LegalCopyright", "CopyRight (C) 2011 HackPro Labs All Rights Reserved"
+            VALUE "OriginalFilename", "Net Dragon.exe"
+            VALUE "ProductName", "Net Dragon"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 936
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_NetDragon_DIALOG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 363
+        BOTTOMMARGIN, 193
+    END
+
+    IDD_NOTICEDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 234
+    END
+
+    IDD_ATTACKDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 354
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 111
+    END
+
+    IDD_SCANDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 291
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 229
+    END
+
+    IDD_DIALOGRECORD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 525
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 253
+    END
+
+    IDD_SHOWDATA, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 439
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 258
+    END
+
+    IDD_DIALOGABOUT, DIALOG
+    BEGIN
+        RIGHTMARGIN, 232
+        TOPMARGIN, 5
+    END
+
+    IDD_WARNINGDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 261
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 114
+    END
+
+    IDD_HISTORYDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 380
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 171
+    END
+
+    IDD_LOCALINFODLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 255
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 176
+    END
+
+    IDD_ARPPROPPAGE, DIALOG
+    BEGIN
+        TOPMARGIN, 3
+    END
+
+    IDD_MONITOR, DIALOG
+    BEGIN
+        RIGHTMARGIN, 348
+        TOPMARGIN, 11
+        BOTTOMMARGIN, 156
+    END
+
+    IDD_RULE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 249
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 186
+    END
+
+    IDD_SYSSET, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 266
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 132
+    END
+
+    IDD_SERVERIP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 76
+    END
+
+    IDD_INTRUSION, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 141
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDD_MENU MENU 
+BEGIN
+    POPUP "程序"
+    BEGIN
+        MENUITEM "本机IP信息",                      ID_LOCALINFO
+        MENUITEM "历史记录",                        ID_HISTORY
+        MENUITEM "退出",                          ID_CLOSEL
+    END
+    POPUP "高级"
+    BEGIN
+        MENUITEM "启动攻击模块",                      ID_ATTACK
+        MENUITEM "扫描在线主机",                      ID_SCANHOST
+    END
+    POPUP "换肤"
+    BEGIN
+        MENUITEM "银白",                          ID_WHITE
+        MENUITEM "蓝色",                          ID_BLUE
+        MENUITEM "机器",                          ID_COMPUT
+        MENUITEM "普通",                          ID_32800
+    END
+    MENUITEM "关于",                          ID_ABOUT
+    MENUITEM "帮助",                          ID_HELP
+END
+
+IDR_POPUPMENU MENU 
+BEGIN
+    POPUP "File"
+    BEGIN
+        MENUITEM "关于",                          ID_FILE_ABOUT
+        MENUITEM "退出",                          ID_FILE_CLOSE
+    END
+END
+
+#endif    // 中文(中华人民共和国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE 4, 2
+#pragma code_page(936)
+#include "res\NetDragon.rc2"  // 非 Microsoft Visual C++ 编辑的资源
+#include "afxres.rc"     // 标准组件
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,15 @@
+create database netshield;
+use netshield
+
+
+
+
+
+
+create table info(
+ID bigint auto_increment primary key,
+SENDER varchar(20),
+ATTACKER varchar(20),
+TYPE int not null,
+TIME datetime
+)ENGINE=InnoDB;

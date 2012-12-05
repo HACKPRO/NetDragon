@@ -1,0 +1,9 @@
+NetDragon为主程序源码，开发环境为VS2005.
+MyFireWallLSP为过滤模块DLL源码，COPY至《Windows网络与通信程序设计》第12章。
+Server为服务器源码，Java编写
+
+核心驱动使用的是Winpcap，使用前请确认安装了Winpcap，且将随压缩包附带的WpdPack下的Inclue与Lib文件夹导入了VS2005。
+
+
+
+— HACKPRO
